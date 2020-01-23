@@ -85,7 +85,19 @@ function makePurchase() {
                     function(error) {
                         if (error) throw error;
                     }
-                )
+                );
+
+                connection.query(
+                    "UPDATE products SET ? WHERE ?",
+                    [
+                        {
+                            product_sales: (itemID.product_sales + totalCost)
+                        },
+                        {
+                            item_id: answer.item
+                        }
+                    ]
+                );
 
                 console.log("Updated Table Below");
                 viewProducts();
