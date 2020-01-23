@@ -1,4 +1,4 @@
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'bamazon';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
 
 DROP DATABASE IF EXISTS bamazon;
 
@@ -14,15 +14,15 @@ CREATE TABLE products (
     stock_quantity INT(10) NOT NULL,
     PRIMARY KEY(item_id)
     );
-
+    
 INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ("laptop", "electronics", 500.00, 100);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("HDMI cable", "electronics", 12, 50);
+VALUES ("HDMI cable", "electronics", 12, 5);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("mascara", "beauty", 7, 60);
+VALUES ("mascara", "beauty", 7, 3);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ("foundation", "beauty", 13, 98);
@@ -44,3 +44,28 @@ VALUES ("pack of pencils", "office supplies", 5, 500);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ("notebook", "office supplies", 4, 300);
+
+ALTER TABLE products
+ADD product_sales INT(50) NOT NULL;
+
+CREATE TABLE departments (
+department_id INT(10) NOT NULL AUTO_INCREMENT,
+department_name VARCHAR(50) NOT NULL,
+overhead_costs INT(50) NOT NULL,
+PRIMARY KEY (department_id)
+);
+
+INSERT INTO departments (department_name, overhead_costs)
+VALUES ("office supplies", 10000);
+
+INSERT INTO departments (department_name, overhead_costs)
+VALUES ("beauty", 5000);
+
+INSERT INTO departments (department_name, overhead_costs)
+VALUES ("furniture", 300000);
+
+INSERT INTO departments (department_name, overhead_costs)
+VALUES ("household items", 275000);
+
+INSERT INTO departments (department_name, overhead_costs)
+VALUES ("electronics", 450000);
