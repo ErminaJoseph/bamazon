@@ -1,5 +1,5 @@
 # bamazon
-This app acts as a mock amazon.com site.  It includes two tables within the bamazon database.  
+This app acts as a mock amazon.com site.  It includes two tables within the bamazon database, products and departments.  
 
 The first file, bamazonCustomer, allows the customer to view the products available and make a purchase by selecting the item ID of the product they like to purchase and how much they'd like to buy.  If the client requests more than what is available, the app will advise that this is an insufficient quantity.  If the client requests an amount less than or equal to the quantity available, the request will do through and the total cost will be provided to the quantity.  Also, the products table will update to reflect new stock quantity.
 
